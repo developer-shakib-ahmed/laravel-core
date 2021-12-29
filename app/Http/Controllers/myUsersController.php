@@ -10,7 +10,7 @@ class myUsersController extends Controller {
 
         $request->validate([
             'email'     => 'required | email',
-            'password'  => 'required | min:8 | max:16'
+            'password'  => 'required | min:8 | max:16',
         ]);
 
         $data = $request->input();
