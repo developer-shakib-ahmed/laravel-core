@@ -31,8 +31,14 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::post('myuser', [myUsersController::class, 'getData']);
 
-Route::get('mylogin', function() {
+Route::get('/mylogin', function() {
 
     return view('mylogin');
+
+});
+
+Route::get('/my404', function(){
+
+    return view('my404');
 
 });
