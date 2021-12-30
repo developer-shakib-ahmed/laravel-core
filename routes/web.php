@@ -42,3 +42,5 @@ Route::get('/my404', function(){
     return view('my404');
 
 });
+
+Route::get('data', [myUsersController::class, 'showData']);
