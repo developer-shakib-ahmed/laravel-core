@@ -18,12 +18,16 @@ use App\Http\Controllers\myUsersController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    // return view('welcome');
+    
 });
+
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/', [HomeController::class, 'index'])->name('/');
 
 
 

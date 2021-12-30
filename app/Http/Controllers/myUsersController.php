@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 
 class myUsersController extends Controller {
 
     public function showData(){
 
-        return DB::select("SELECT * FROM users");
+        // return DB::select("SELECT * FROM users");
+
+        return User::all('id', 'name');
 
     }
 
