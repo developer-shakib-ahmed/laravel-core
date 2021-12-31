@@ -15,7 +15,33 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{-- {{ __('You are logged in!') }} --}}
+
+                    <table class="table">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($collection as $item)
+
+                                <tr>
+                                    <td>{{ $item['id'] }}</td>
+                                    <td>{{ $item['name'] }}</td>
+                                    <td>{{ $item['email'] }}</td>
+                                    <td><a href="/?id={{ $item['id'] }}"><i class="fa fa-trash-alt"></i></a></td>
+                                </tr>
+                                
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    {{ $collection->links() }}
+
                 </div>
             </div>
         </div>
