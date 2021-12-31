@@ -12,7 +12,6 @@ class myUsersController extends Controller {
     public function showData(){
 
         // return DB::select("SELECT * FROM users");
-
         return User::all('id', 'name');
 
     }
@@ -20,14 +19,16 @@ class myUsersController extends Controller {
     
     public function getData( Request $request ) {
 
+        $request->session()->flash('email', $request->input('email'));
+
         $request->validate([
             'email'     => 'required | email',
             'password'  => 'required | min:8 | max:16',
         ]);
 
-        $data = $request->input();
+        $request->session()->flash('success', 'true');
 
-        return $data;
+        return redirect('mylogin');
 
     }
     

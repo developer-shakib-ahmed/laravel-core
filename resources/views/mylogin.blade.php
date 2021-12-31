@@ -28,8 +28,15 @@
 
                     <form action="myuser" method="POST">
                         @csrf
+
                         <p>
-                            <input type="text" name="email" class="form-control" placeholder="Enter your email">
+                            <input 
+                                type="text"
+                                name="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                                value="@if( session('email') && !session('success') ) {{ session('email') }} @endif"
+                            >
                             <span class="text-danger">@error('email') {{ $message }} @enderror</span>
                         </p>
 
@@ -39,6 +46,11 @@
                         </p>
 
                         <button class="btn btn-success">Login</button>
+
+                        
+                        @if( session('success') ) 
+                            <p class="text-success mt-3 mb-0">Login Success!!</p>
+                        @endif                            
                     </form>
                 </div>
 
