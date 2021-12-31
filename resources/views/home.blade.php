@@ -33,7 +33,7 @@
                                     <td>{{ $item['id'] }}</td>
                                     <td>{{ $item['name'] }}</td>
                                     <td>{{ $item['email'] }}</td>
-                                    <td><a href="/?id={{ $item['id'] }}"><i class="fa fa-trash-alt"></i></a></td>
+                                    <td><a href="/user/delete/?id={{ $item['id'] }}">Delete <i class="fa fa-home"></i></a></td>
                                 </tr>
                                 
                             @endforeach
