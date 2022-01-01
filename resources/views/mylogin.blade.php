@@ -21,9 +21,7 @@
 
                             @endforeach
 
-                        @endif
-
-                        
+                        @endif                        
                     </ul>
 
                     <form action="myuser" method="POST">

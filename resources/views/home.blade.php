@@ -9,15 +9,35 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @if (session('delete'))
+                    @if ( session('delete') )
                         <div class="alert alert-danger" role="alert">
-                            Id {{ session('delete') }} is deleted!
+                            {{ session('delete') }} is deleted!
+                        </div>
+                    @endif
+
+                    @if ( session('success') )
+                        <div class="alert alert-success" role="alert">
+                            Data update succesful.
+                        </div>
+                    @endif
+
+                    @if ( session('add_success') )
+                        <div class="alert alert-success" role="alert">
+                            Data added succesful.
                         </div>
                     @endif
 
                     {{-- {{ __('You are logged in!') }} --}}
 
-                    <p>Totals: {{ count( $collection ) }}</p>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <p>Totals: {{ count( $collection ) }}</p>
+                        </div>
+
+                        <div class="col text-end">
+                            <a class="btn btn-sm btn-primary" href="/user/add">Add User <i class="fa fa-user"></i></a>
+                        </div>
+                    </div>
 
                     <table class="table">
                         <thead class="table-dark">
@@ -36,10 +56,10 @@
                                     <td>{{ $item['name'] }}</td>
                                     <td>{{ $item['email'] }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-info text-white" href="/user/view/{{ $item['id'] }}">
+                                        <a class="btn btn-sm btn-info text-white me-2" href="/user/show/{{ $item['id'] }}">
                                             <i class="fa fa-eye"></i>
                                         </a>
-                                        <a class="btn btn-sm btn-primary" href="/user/edit/{{ $item['id'] }}">
+                                        <a class="btn btn-sm btn-primary me-2" href="/user/edit/{{ $item['id'] }}">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a>
                                         <a class="btn btn-sm btn-danger" href="/user/delete/{{ $item['id'] }}">
