@@ -26,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        $data = User::paginate(2);
+        // $data = User::paginate(2);
+        $data = User::all();
 
         return view('home', ['collection' => $data]);
     }

@@ -7,9 +7,11 @@ use Illuminate\Support\Facades\DB;
 use App\Models\User;
 
 
-class myUsersController extends Controller {
+class myUsersController extends Controller
+{
 
-    public function showData(){
+    public function showData()
+    {
 
         // return DB::select("SELECT * FROM users");
         return User::all('id', 'name');
@@ -17,7 +19,8 @@ class myUsersController extends Controller {
     }
 
     
-    public function getData( Request $request ) {
+    public function getData( Request $request )
+    {
 
         $request->session()->flash('email', $request->input('email'));
 
@@ -30,6 +33,23 @@ class myUsersController extends Controller {
 
         return redirect('mylogin');
 
+    }
+
+
+    public function userControl($path, $id, Request $request)
+    {
+        if( $path == 'delete' )
+        {
+
+            $data = User::find( $id );
+
+            $data->delete();
+
+            $request->session()->flash('delete', $id);
+
+            return redirect('/');
+
+        }
     }
     
 

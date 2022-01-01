@@ -17,11 +17,7 @@ use App\Http\Controllers\myUsersController;
 |
 */
 
-Route::get('/', function () {
-
-    // return view('welcome');
-    
-});
+Route::get('/user/{delete}/{id}', [myUsersController::class, 'userControl']);
 
 
 Auth::routes();
