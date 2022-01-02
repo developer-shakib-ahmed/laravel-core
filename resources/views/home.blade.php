@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('body_class', 'home')
+
 @section('content')
 
 <div class="container">
@@ -62,7 +64,7 @@
                                         <a class="btn btn-sm btn-primary me-2" href="/user/edit/{{ $item['id'] }}">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a>
-                                        <a onclick="deleteConfirm()" class="btn btn-sm btn-danger" href="#">
+                                        <a class="btn btn-sm btn-danger delete" href="/user/delete/{{ $item['id'] }}">
                                             <i class="far fa-trash-alt"></i>
                                         </a>
                                     </td>
