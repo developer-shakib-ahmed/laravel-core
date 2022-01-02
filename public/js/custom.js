@@ -1,1 +1,3 @@
-console.log('Done');
+function myFunc(){
+    confirm("Press a button!")
+}

@@ -62,7 +62,7 @@
                                         <a class="btn btn-sm btn-primary me-2" href="/user/edit/{{ $item['id'] }}">
                                             <i class="fa fa-pencil-alt"></i>
                                         </a>
-                                        <a class="btn btn-sm btn-danger" href="/user/delete/{{ $item['id'] }}">
+                                        <a onclick="deleteConfirm()" class="btn btn-sm btn-danger" href="#">
                                             <i class="far fa-trash-alt"></i>
                                         </a>
                                     </td>
