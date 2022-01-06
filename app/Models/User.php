@@ -44,7 +44,7 @@ class User extends Authenticatable
 
 
     /**
-     * Pratice here laravel accessors concept
+     * Practice here laravel Accessors concept
      */
     public function getNameAttribute( $value )
     {
@@ -55,5 +55,14 @@ class User extends Authenticatable
         return $value . '.bd';
     }
 
+
+    /**
+     * Practice here laravel Mutator concept
+     */
+    public function setNameAttribute( $value )
+    {
+        // This is work when new data add on database.
+        $this->attributes['name'] = 'Mr ' . $value;
+    }
 
 }
