@@ -41,4 +41,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Pratice here laravel accessors concept
+     */
+    public function getNameAttribute( $value )
+    {
+        return lcfirst( $value );
+    }
+    public function getEmailAttribute( $value )
+    {
+        return $value . '.bd';
+    }
+
+
 }

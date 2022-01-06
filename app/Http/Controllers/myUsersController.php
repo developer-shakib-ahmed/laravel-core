@@ -16,7 +16,7 @@ class myUsersController extends Controller
     {
 
         // return DB::select("SELECT * FROM users");
-        return User::all('id', 'name');
+        return User::all( );
 
     }
 
